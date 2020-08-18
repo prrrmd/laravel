@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 
-class checkAge #add this class path to kernel.php in line 56(as individual middleware)
+class checkAmount
 {
     /**
      * Handle an incoming request.
@@ -14,8 +14,8 @@ class checkAge #add this class path to kernel.php in line 56(as individual middl
      * @return mixed
      */
     public function handle($request, Closure $next)
-    { 
-        if($request->age && $request->age<20)
+    {
+        if($request->amount && $request->amount<500)
         {
             return redirect('unauthorised');
         }
