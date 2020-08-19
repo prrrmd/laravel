@@ -13,31 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/', function () {
+    return view('welcome');
+});
+
 Route::view('facebook','form');
 
 
-Route::group(['middleware'=>'checkUser'],function(){
 
-	Route::get('/', function (){
-	    return view('welcome');
-	});
-
-	Route::get('profile',function(){
-		return view('profile');
-	});
-
-	Route::post('login','LoginController@index');
-
-	Route::get('logout',function(){
-		session()->forget('data');
-		return redirect('facebook');
-	});
-});
-
-
-
-
-
+Route::post('login','LoginController@index');
 
 
 
