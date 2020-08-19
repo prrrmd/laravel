@@ -13,17 +13,24 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//To change default lang go to config/app.php and change 'locale' => 'en'
+
+//To create user defined english & marathi languge create folder mr in resourses/lang. && add file .php in both folder here we uses show.php vut name can be any. 
+
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::view('facebook','form');
+Route::view('show','show');
 
+Route::get('show/{lang}',function($lang){
+	App::setlocale($lang);     //this will set the languege for view
+	return view('show');
+});
 
+//to translate page marathi use : http://localhost/laravel/ics_proj1/public/show/mr
 
-Route::post('login','LoginController@index');
-
-
+//Note : suppose lang code enter in url is not valid then it take Config/app.php 'fallback_locale' value as language.
 
 
 
