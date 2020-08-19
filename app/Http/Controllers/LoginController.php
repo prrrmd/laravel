@@ -18,10 +18,10 @@ class LoginController extends Controller
     	//And if session has data then only give access of pageto user. else redirect to home page.
 
     	if($req->session()->has('data'))
-    		return redirect('profile');
-    	else
-    		return redirect('access_denied');
+    		return redirect('profile'); 	
 
     }
 
 }
+
+

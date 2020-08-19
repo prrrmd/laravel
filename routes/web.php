@@ -22,7 +22,7 @@ Route::view('facebook','form');
 Route::get('profile',function(){
 	if(!session()->has('data'))
 	{
-		return redirect('access_denied');
+		return redirect('facebook');
 	}
 	return view('profile');
 });
