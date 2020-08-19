@@ -1,8 +1,4 @@
-<h3>API Calling in laravel</h3><br>
-<!-- {{print_r($data)}} -->
+<h2>Your Are Log In</h2>
+<h3>Welcome : {{session('data')['name']}}</h3>
 
-@foreach($data as $item)
-<li>
-	{{$item['id']}} :: {{$item['title']}}
-</li>
-@endforeach
+<a href="logout"><button>Logout</button>

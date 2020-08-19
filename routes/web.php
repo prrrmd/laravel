@@ -17,9 +17,26 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::view('facebook','form');
+
+Route::get('profile',function(){
+	if(!session()->has('data'))
+	{
+		return redirect('access_denied');
+	}
+	return view('profile');
+});
+
+Route::view('access_denied','access_denied');
+
+Route::post('login','LoginController@index');
+
+Route::get('logout',function(){
+	session()->forget('data');
+	return redirect('facebook');
+});
 
 
-Route::get('profile','profileController@index');
 
 
 
