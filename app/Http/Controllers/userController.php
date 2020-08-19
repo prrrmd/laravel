@@ -29,14 +29,22 @@ class userController extends Controller
     	// ->insert(['name'=>'Shubham']);
 
     	#Update Record
-    	DB::table('students')
-    	->where('id',4)
-    	->update(['name'=>'Jayant']);
+    	// DB::table('students')
+    	// ->where('id',4)
+    	// ->update(['name'=>'Jayant']);
 
-    	// $data=DB::table('students')->find(4); //this will apply on id automatically
+    	#Find record on id=4
+    	// $data=DB::table('students')->find(4); 
     	// print_r($data);
 
-    	// $data=DB::table('students')->count();//give total count of records
+    	#count/min/max
+    	// $data=DB::table('students')->count();
     	// echo $data;
+
+    	#Join in table employees & students ON ID.
+    	return DB::table('students')
+    	->join('employees1','students.name','employees1.name')
+    	->select('students.id','students.name','employees1.birthdate')
+    	->get();
     }
 }
