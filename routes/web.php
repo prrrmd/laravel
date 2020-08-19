@@ -18,8 +18,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::view('form','form');
-Route::post('fileupload','formController@index');
+Route::get('user','userController@index');
 
 
 
