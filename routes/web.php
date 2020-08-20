@@ -18,8 +18,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('user','userController@index');
+Route::view('form','form');
 
+Route::post('form','workerController@index');
 
 
 
