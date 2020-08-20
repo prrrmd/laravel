@@ -9,7 +9,7 @@ class userController extends Controller
 {
     function index()
     {
-    	$data = DB::table('students')->get();
+    	$data = DB::table('students')->paginate(3);
     	return view('table',['data'=>$data]);
     }
 }

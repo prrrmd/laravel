@@ -2,3 +2,5 @@
 {{$item->id}} : {{$item->name}}
 <br>
 @endforeach
+
+{{$data->links()}}
