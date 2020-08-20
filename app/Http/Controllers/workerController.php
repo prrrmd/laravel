@@ -7,12 +7,26 @@ use App\worker;
 
 class workerController extends Controller
 {
-    function index(Request $req)
+    function insert(Request $req)
     {
-    	//return worker::all();
-    	//return worker::where('name','Akash')->get();
-    	//return worker::count();
-    	//return worker::find(6);
-    	//return worker::min('birthdate');
+    	$worker = new worker;
+    	$worker->name = $req->name;
+    	$worker->password = $req->password;
+    	$worker->email = $req->email;
+    	$worker->income = $req->income;
+    	$worker->birthdate = $req->birthdate;
+    	$worker->save();
+    }
+
+    function update(Request $req)
+    {
+    	worker::where('id',$req->id)
+    	->update(['name'=>$req->name,'password'=>$req->password]);
+    }
+
+    function delete(Request $req)
+    {
+    	$worker = worker::find($req->id);
+    	$worker->delete();
     }
 }

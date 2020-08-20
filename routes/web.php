@@ -20,8 +20,9 @@ Route::get('/', function () {
 
 Route::view('form','form');
 
-Route::post('form','workerController@index');
-
+Route::post('insert','workerController@insert');
+Route::post('update','workerController@update');
+Route::post('delete','workerController@delete');
 
 
 
