@@ -18,11 +18,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::view('form','form');
+Route::get('show','workerController@index');
 
-Route::post('insert','workerController@insert');
-Route::post('update','workerController@update');
-Route::post('delete','workerController@delete');
+
 
 
 
