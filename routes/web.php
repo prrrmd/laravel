@@ -18,8 +18,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('show','workerController@index');
 
+Route::get('home',function(){
+	return view('home',['title'=>'OUR HOME']);
+});
+
+Route::get('about',function(){
+	return view('about',['title'=>'ABOUT US']);
+});
+
+Route::get('contact',function(){
+	return view('contact',['title'=>'CONTACT US']);
+});
 
 
 
